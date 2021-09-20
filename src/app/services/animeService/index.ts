@@ -3,7 +3,10 @@ import { GET_ANIME_PAGE } from './queries';
 import { GetAnimePage } from './__generated__/GetAnimePage';
 
 class AnimeService {
-  async getAnimePage(page: Number, perPage = 5): Promise<GetAnimePage['Page']> {
+  async getAnimePage(
+    page: Number,
+    perPage = 102
+  ): Promise<GetAnimePage['Page']> {
     try {
       const response = await apolloClient.query({
         query: GET_ANIME_PAGE,
@@ -14,7 +17,7 @@ class AnimeService {
         throw new Error('Cannot get anime list !!');
       }
 
-      return response.data;
+      return response.data.Page;
     } catch (error) {
       throw error;
     }

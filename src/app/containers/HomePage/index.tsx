@@ -5,6 +5,7 @@ import { GetAnimePage } from '../../services/animeService/__generated__/GetAnime
 import { setAnimePage } from './homePageSlice';
 import animeService from '../../services/animeService';
 import { useAppDispatch } from '../../hooks';
+import HotAnime from './HotAnime';
 
 interface IHomePageProps {}
 
@@ -38,6 +39,7 @@ export default function HomePage(props: IHomePageProps) {
   return (
     <Container>
       <h1>Hot Anime</h1>
+      <HotAnime />
     </Container>
   );
 }

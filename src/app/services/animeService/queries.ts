@@ -10,7 +10,7 @@ export const GET_ANIME_PAGE = gql`
         }
         description
         coverImage {
-          medium
+          extraLarge
         }
       }
     }

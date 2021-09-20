@@ -1,14 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { IHomePageState } from './types';
 
-const initialState = {
-  animeList: [],
+const initialState: IHomePageState = {
+  animePage: null,
 };
 
 const homePageSlice = createSlice({
   name: 'homePage',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setAnimePage(state, action) {
+      state.animePage = action.payload;
+    },
+  },
 });
 
-export const {} = homePageSlice.actions;
+export const { setAnimePage } = homePageSlice.actions;
 export default homePageSlice.reducer;
